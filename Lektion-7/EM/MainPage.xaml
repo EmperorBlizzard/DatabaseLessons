@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EM.MainPage">
+    <Grid RowDefinitions="*, auto">
+        <Grid RowDefinitions="auto, *">
+            <VerticalStackLayout Grid.Row="0" Margin="0,0,0,30">
+                <Entry x:Name="articleNumber" Placeholder="Article Number" Margin="0,0,0,10" />
+                <Entry x:Name="productTitle" Placeholder="Product Title" Margin="0,0,0,10" />
+                <Entry x:Name="categoryName" Placeholder="categoryName" Margin="0,0,0,10" />
+                <Button x:Name="btn_Addproduct" Text="Add" Clicked="btn_Addproduct_Clicked" />
+            </VerticalStackLayout>
+
+            <ListView x:Name="ProductListView" Grid.Row="1">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Titel} Detail={Binding ArticlNumber}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+
+</ContentPage>
